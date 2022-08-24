@@ -1,0 +1,26 @@
+name: CI
+
+on:
+  push:
+    branches: [ "main","master" ]
+  workflow_dispatch:
+
+env:
+  weekdays: "Wednesday"
+  sprint: "sprint2"
+  mentor: "Pinkesh"
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Run a one-line script
+        run: echo $weekdays
+
+      - name: Run a multi-line script
+        run: |
+          echo this is the $sprint
+          echo the mentor name is $mentor
